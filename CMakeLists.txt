@@ -7,7 +7,7 @@ project(MyQtProject)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick )
 qt_standard_project_setup()
 
-# Add your source files
+
 set(SOURCES
     src/main.cpp
     # Add other source files here
