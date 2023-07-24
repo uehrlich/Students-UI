@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(MyQtProject)
-
-
+project(MyQtProject VERSION 0.1 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(MSVC)
+    set(CMAKE_CXX_FLAGS
+            "${CMAKE_CXX_FLAGS} /std:c++20 /Zc:__cplusplus /permissive-")
+endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick )
 qt_standard_project_setup()
@@ -10,7 +14,8 @@ qt_standard_project_setup()
 
 set(SOURCES
     src/main.cpp
-    # Add other source files here
+
+        # Add other source files here
 )
 
 # Create the executable
