@@ -10,13 +10,14 @@ endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick )
 qt_standard_project_setup()
-
+#find_package(Qt6 REQUIRED COMPONENTS Core)
+#target_link_libraries(app PRIVATE Qt6::Core)
 
 set(SOURCES
     src/main.cpp
 
         # Add other source files here
-)
+        src/Student.cpp src/Student.h)
 
 # Create the executable
 add_executable(app ${SOURCES})

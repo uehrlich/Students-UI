@@ -1,7 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
 
-ApplicationWindow {
+Window {
     visible: true
     width: 400
     height: 300
@@ -9,7 +8,7 @@ ApplicationWindow {
 
     Text {
         anchors.centerIn: parent
-        text: "Hello, Qt!"
+        text: `i = ${msg}`
         font.pixelSize: 24
     }
 }
