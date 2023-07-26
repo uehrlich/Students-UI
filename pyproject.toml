@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 conan = "^2.0.9"
+aqtinstall = "^3.1.6"
 
 
 [build-system]

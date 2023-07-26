@@ -16,7 +16,7 @@ set(SOURCES
     src/main.cpp
 
         # Add other source files here
-)
+        src/student.cpp src/student.hpp src/message.cpp src/message.hpp)
 
 # Create the executable
 add_executable(app ${SOURCES})
