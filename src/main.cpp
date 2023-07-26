@@ -19,8 +19,8 @@ int main(int argc, char *argv[])
 
     auto main_qml  = fs::path(__FILE__).parent_path() / "main.qml";
     engine.load(QUrl(main_qml.c_str()));
-  // const QString foo = "hello from C++";
-    //engine.rootContext()->setContextProperty("foo_from_cpp", foo);
-    engine.rootContext()->setContextProperty("msg", &msg);
+   const QString foo = "hello from C++";
+    engine.rootContext()->setContextProperty("foo_from_cpp", foo);
+   // engine.rootContext()->setContextProperty("msg", &msg);
     return app.exec();
 }

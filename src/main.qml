@@ -9,11 +9,11 @@ Window {
     Text {
         anchors.centerIn: parent
         font.pixelSize: 24
-        //text: `${foo_from_cpp}`
-        text: msg.author
+        text: `${foo_from_cpp}`
+        //text: msg.author
 
-        Component.onCompleted: {
-            msg.author = "Jonah";  // invokes Message::setAuthor()
-        }
+        //Component.onCompleted: {
+           // msg.author = "Jonah";  // invokes Message::setAuthor()
+        //}
     }
 }
