@@ -12,20 +12,43 @@ int main(int argc, char *argv[])
     int ID,numOfGrade;
     string name;
     QGuiApplication app(argc, argv);
+    qmlRegisterType<Student>("App", 1, 0, "Student");
+    QQmlApplicationEngine engine;
+    const QUrl url(QStringLiteral("/home/almog/CLionProjects/Students-UI/src/main.qml"));
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &app, [url](QObject *obj, const QUrl &objUrl) {
+                if (!obj && url == objUrl)
+                    QCoreApplication::exit(-1);
+            }, Qt::QueuedConnection);
+    engine.load(url);
+
+    /*
+    Student student ;
+    engine.rootContext()->setContextProperty("student", &student);
+
+    qmlRegisterType<Student>("App", 1, 0, "");
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("/home/almog/CLionProjects/Students-UI/src/main.qml")));
-    cout <<"Please enter ID, name, and the amount of grade-  /n";
-    cin >> ID,name,numOfGrade;
-    auto stu = Student(ID,name,numOfGrade);
+    const QUrl url(u"qrc:/untitled/main.qml"_qs);
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &app, [url](QObject *obj, const QUrl &objUrl) {
+                if (!obj && url == objUrl)
+                    QCoreApplication::exit(-1);
+            }, Qt::QueuedConnection);
+    engine.load(url);
 
-    //Query the database
-    string msg ="";
-    for (const auto &item: stu.GetGrade()) {
-       msg+="/n "+item;
-    }
-    auto a = engine.rootContext();
-    int i=9;
-    a->setContextProperty("i", i);
+
+
+
+
+*/
+
     return app.exec();
 }
+/*cout <<"Please enter ID, name, and the amount of grade-  /n";
+cin >> ID,name,numOfGrade;Student(ID,name,numOfGrade);*/
+/*//Query the database
+string msg ="";
+for (const auto &item: stu.GetGrade()) {
+   msg+="/n "+item;
+}*/
