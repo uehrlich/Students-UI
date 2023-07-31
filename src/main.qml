@@ -1,15 +1,19 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
 
-ApplicationWindow {
-    visible: true
-    width: 400
+Window {
     height: 300
     title: "Qt Example"
+    visible: true
+    width: 400
 
     Text {
         anchors.centerIn: parent
-        text: "Hello, Qt!"
         font.pixelSize: 24
+        text: `${foo_from_cpp}`
+        //text: msg.author
+
+        //Component.onCompleted: {
+           // msg.author = "Jonah";  // invokes Message::setAuthor()
+        //}
     }
 }
